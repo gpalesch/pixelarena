@@ -15,7 +15,7 @@
   \**********************/
 (__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-header/./src/index.js?\n}");
+eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Cart_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-cart/./src/index.js?\n}");
 
 /***/ }
 
@@ -31,12 +31,6 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
-/******/ 		// Check if module exists (development only)
-/******/ 		if (__webpack_modules__[moduleId] === undefined) {
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
-/******/ 			e.code = 'MODULE_NOT_FOUND';
-/******/ 			throw e;
-/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
@@ -45,6 +39,12 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Flag the module as loaded
@@ -103,7 +103,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_components_Navbar_jsx":"eaec640413acb036fbdb","src_bootstrap_jsx":"c400146a01f5051b1ee4","vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_components_Cart_jsx":"2cfd335443d8f029edb1","src_bootstrap_jsx":"e5c68138c69652ae3e39","vendors-node_modules_react-dom_index_js":"54528c6753361a3b7deb","vendors-node_modules_react_index_js":"fa0daaa27cfeac1a5351"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -115,7 +115,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "pixelarena-mfe-header:";
+/******/ 		var dataWebpackPrefix = "pixelarena-mfe-cart:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -198,7 +198,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 			var warn = (msg) => {
 /******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 			};
-/******/ 			var uniqueName = "pixelarena-mfe-header";
+/******/ 			var uniqueName = "pixelarena-mfe-cart";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -230,7 +230,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "http://localhost:3001/";
+/******/ 		__webpack_require__.p = "http://localhost:3004/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
@@ -488,7 +488,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_header"] = self["webpackChunkpixelarena_mfe_header"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_cart"] = self["webpackChunkpixelarena_mfe_cart"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

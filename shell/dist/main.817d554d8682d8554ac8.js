@@ -19,6 +19,54 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 
 /***/ },
 
+/***/ "webpack/container/reference/mfeCart"
+/*!***************************************************************!*\
+  !*** external "mfeCart@http://localhost:3004/remoteEntry.js" ***!
+  \***************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof mfeCart !== "undefined") return resolve();
+	__webpack_require__.l("http://localhost:3004/remoteEntry.js", (event) => {
+		if(typeof mfeCart !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "mfeCart");
+}).then(() => (mfeCart));
+
+/***/ },
+
+/***/ "webpack/container/reference/mfeCatalog"
+/*!******************************************************************!*\
+  !*** external "mfeCatalog@http://localhost:3003/remoteEntry.js" ***!
+  \******************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof mfeCatalog !== "undefined") return resolve();
+	__webpack_require__.l("http://localhost:3003/remoteEntry.js", (event) => {
+		if(typeof mfeCatalog !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "mfeCatalog");
+}).then(() => (mfeCatalog));
+
+/***/ },
+
 /***/ "webpack/container/reference/mfeHeader"
 /*!*****************************************************************!*\
   !*** external "mfeHeader@http://localhost:3001/remoteEntry.js" ***!
@@ -181,7 +229,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_bootstrap_jsx":"e6c793ec850501083029","vendors-node_modules_react-dom_index_js":"543c05e326794169560a","vendors-node_modules_react_index_js":"9cc8a0d2e69a6b233e32"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_bootstrap_jsx":"76765afbbfdee3f14802","vendors-node_modules_react-dom_index_js":"543c05e326794169560a","vendors-node_modules_react_index_js":"9cc8a0d2e69a6b233e32"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -263,6 +311,12 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			],
 /******/ 			"webpack_container_remote_mfeLobby_Lobby": [
 /******/ 				"webpack/container/remote/mfeLobby/Lobby"
+/******/ 			],
+/******/ 			"webpack_container_remote_mfeCatalog_Catalog": [
+/******/ 				"webpack/container/remote/mfeCatalog/Catalog"
+/******/ 			],
+/******/ 			"webpack_container_remote_mfeCart_Cart": [
+/******/ 				"webpack/container/remote/mfeCart/Cart"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
@@ -275,6 +329,16 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				"default",
 /******/ 				"./Lobby",
 /******/ 				"webpack/container/reference/mfeLobby"
+/******/ 			],
+/******/ 			"webpack/container/remote/mfeCatalog/Catalog": [
+/******/ 				"default",
+/******/ 				"./Catalog",
+/******/ 				"webpack/container/reference/mfeCatalog"
+/******/ 			],
+/******/ 			"webpack/container/remote/mfeCart/Cart": [
+/******/ 				"default",
+/******/ 				"./Cart",
+/******/ 				"webpack/container/reference/mfeCart"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
@@ -367,6 +431,8 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 					register("react", "18.3.1", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js"))))));
 /******/ 					initExternal("webpack/container/reference/mfeHeader");
 /******/ 					initExternal("webpack/container/reference/mfeLobby");
+/******/ 					initExternal("webpack/container/reference/mfeCatalog");
+/******/ 					initExternal("webpack/container/reference/mfeCart");
 /******/ 				}
 /******/ 				break;
 /******/ 			}
