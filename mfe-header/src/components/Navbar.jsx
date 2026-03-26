@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import eventBus from 'shared/eventBus';
 import './Navbar.css';
 
-function Navbar({ notifications = 0 }) {
+function Navbar() {
+  const [notifications, setNotifications] = useState(0);
+
+  useEffect(() => {
+    const handlePlayerJoined = () => {
+      setNotifications((prev) => prev + 1);
+    };
+
+    const unsubscribe = eventBus.on('player:joined', handlePlayerJoined);
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
