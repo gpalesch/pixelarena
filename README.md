@@ -1,79 +1,32 @@
-# PixelArena - Checkpoint 1 : Le Bug du Lobby
+# CP7 — L'Assemblage Final
 
-## Contexte
-
-Bienvenue chez **PixelArena** ! Vous venez d'etre embauche comme developpeur frontend.
-
-Le developpeur precedent a quitte l'entreprise precipitamment. Son code... disons qu'il a ses particularites.
-
-Votre manager vous demande une modification "simple" :
-
-> "Change la couleur du bouton JOIN dans le Lobby. Le bleu ne va pas avec notre nouvelle charte graphique. Mets-le en **vert** (#10b981). Ca devrait prendre 5 minutes."
-
-## Installation
+Télécharge le zip depuis le dossier partagé Teams et extrais-le.
 
 ```bash
-npm install
-npm start
-```
-
-L'application demarre sur http://localhost:3000
-
-## Votre Mission
-
-### Objectif
-Changer la couleur du bouton "JOIN" dans le Lobby de **bleu** (#3b82f6) vers **vert** (#10b981).
-
-### Fichier a modifier
-`src/components/Lobby.css`
-
-### Ce que vous devez faire
-1. Ouvrir `src/components/Lobby.css`
-2. Trouver la classe `.button`
-3. Changer `background: #3b82f6` en `background: #10b981`
-4. Sauvegarder
-
-### Resultat attendu
-Seul le bouton "JOIN" du Lobby devrait devenir vert.
-
----
-
-## Validation du Checkpoint
-
-Apres avoir fait la modification, repondez a ces questions :
-
-1. Le bouton "JOIN" est-il devenu vert ?
-2. Les autres boutons ont-ils change de couleur aussi ?
-3. Si oui, pourquoi selon vous ?
-
-Réponses:
-Si on ne change que la bg-color, JOIN ne change pas
-parce que le button il est une classe dans 3 css
-faut mettre ! important pour que cela functionne, mais par contre tous les buttons vont changer, parce que tous les buttons ont la classe .button ne pas que JOIN
-
----
-
-## Structure du projet
-
-```
-pixelarena-checkpoint1/
-├── src/
-│   ├── index.js
-│   ├── App.jsx
-│   ├── App.css
-│   └── components/
-│       ├── Navbar.jsx
-│       ├── Navbar.css      <- Equipe Navbar
-│       ├── Lobby.jsx
-│       ├── Lobby.css       <- Equipe Lobby (MODIFIER ICI)
-│       ├── Leaderboard.jsx
-│       └── Leaderboard.css <- Equipe Leaderboard
-├── public/
-│   └── index.html
-├── package.json
-└── webpack.config.js
+T1 : cd mfe-header  && npm install && npm start   # 3001
+T2 : cd mfe-lobby   && npm install && npm start   # 3002
+T3 : cd mfe-catalog && npm install && npm start   # 3003
+T4 : cd mfe-cart    && npm install && npm start   # 3004
+T5 : cd shell       && npm install && npm start   # 3000
 ```
 
 ---
 
-Bonne chance !
+## Mission
+
+`mfe-header/src/components/Navbar.jsx` — 1 `useEffect`, 3 TODOs :
+
+**TODO 1** — s'abonner à `game:joined` et incrémenter le badge notifications
+
+**TODO 2** — s'abonner à `cart:updated` et mettre à jour le badge panier avec le `count`
+
+**TODO 3** — retourner le cleanup des 2 abonnements
+
+---
+
+## Validation
+
+- Rejoindre une partie → badge 🔔 +1
+- Ajouter au panier → badge 🛒 +1
+- Vider le panier → badge 🛒 = 0
+- Push ta branche
